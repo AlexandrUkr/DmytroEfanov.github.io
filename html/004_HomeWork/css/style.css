@@ -1,0 +1,300 @@
+body{
+	height: 100%;
+	width: 100%;
+	background-image: url(../img/fon_body.png);
+}
+
+		/* container */
+	
+.main{
+	background-color: #fff;
+	height: 990px;
+	width: 1000px;
+	margin: 0 auto;
+	-webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.6);
+-moz-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.6);
+box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.6);
+position: relative;
+
+}
+		/* header */
+.head{
+	/*clear: both;*/
+	height: 173px;
+	width: 1000px;
+}
+	/* left div */
+	.left{
+		height: 176px;
+		float: left;
+		position: relative;
+		top: -5px;
+	}
+	.left p{
+		font-family: Tahoma;
+		font-size: 12px;
+		color: #128aa7;
+		position: absolute;
+		left: 75px;
+		top: 120px;
+	}
+		.logo_img{
+			margin-left: 28px;
+			margin-top: 17px;
+			
+		}
+		 /*right div*/
+	.right{
+		float: right;
+		height: 176px;
+	}	
+	.phone{
+		float: right;
+		padding-bottom: 35px;
+	}
+		.phone ul{
+			margin-top: 10px;
+			margin-right: 35px;
+			font-family: Tahoma;
+			font-size: 12px;
+			color: #128aa7;
+		}
+		.phone ul li{
+			text-align: right;
+		}
+		.phone ul li:first-child{
+			font-weight: bold;
+		}
+		.phone a{
+			color: #128aa7;
+		}
+		.phone a:hover{
+			color: #128aa7;
+		}
+		/* flags */
+		.country{
+			margin-right: 43px;
+			clear: right;
+		}	
+		.country li{
+			float: right;
+			margin-right: 5px;
+			font-family: Tahoma;
+			font-size: 10px;
+		}
+		.country li a{
+			display: block;
+			text-align: center;
+			padding-top: 45px;
+			background-position: center top;
+			background-repeat: no-repeat;
+			height: 60px;
+			width: 60px;
+			text-decoration: underline;
+			color: #128aa7;
+		}
+		* html .navigation li a { /* хак для IE6, который иначе трактует блочную модель */
+    	height: 150px;
+		}
+		
+		.country a:hover{
+			text-decoration: none;
+			color: #128aa7;
+		}
+		
+		.country .flag6 a {
+			background-image: url(../img/flag1.png);
+		}
+		.country .flag5 a {
+			background-image: url(../img/flag2.png);
+		}
+		.country .flag4 a {
+			background-image: url(../img/flag3.png);
+		}
+		.country .flag3 a {
+			background-image: url(../img/flag4.png);
+		}
+		.country .flag2 a {
+			background-image: url(../img/flag5.png);
+		}
+		.country .flag1 a {
+			background-image: url(../img/flag6.png);
+		}
+		
+		/* ocean_beach foto */
+	.ocean{
+		background-image: url(../img/main.png);
+		width: 1000px;
+		height: 236px;
+		clear: both;
+		border-top: 1px solid #128aa7;
+		border-bottom: 1px solid #128aa7;
+	}
+	
+		/* menu */
+	.panel{
+		width: 1000px;
+		height: 30px;
+	}	
+	.menu{
+		position: relative;
+		z-index: 2;
+		list-style: none;
+		background-color: #323232;
+		width: 1000px;
+		height: 30px;
+		-webkit-box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.75);
+		box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.75);
+		border-bottom: 1px solid #000;
+		}
+		
+		.menu li{
+			float: left;
+			text-align: center;
+			width: 14%;
+			height: 30px;
+			line-height: 27px;
+			position: relative;
+			
+		}
+		.menu li a{
+			display: block;
+			font-family: Tahoma;
+			font-size: 14px;
+			color: #fff;
+			height: 40px;
+		}
+
+		.menu li a:hover{
+			font-family: Tahoma;
+			font-size: 14px;
+			color: #fff;
+		}
+		.menu li:hover ul{
+			display: block;
+		}
+		/* travelling */
+		.triangle01{
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 2.5px 0 2.5px;
+			border-color: #ffffff transparent transparent transparent;
+			top: 13px;
+    		right: 15px;
+		}
+		/* service */
+		.triangle02{
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 2.5px 0 2.5px;
+			border-color: #ffffff transparent transparent transparent;
+			top: 13px;
+    		right: 35px;
+		}
+		/* partners */
+		.triangle03{
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 2.5px 0 2.5px;
+			border-color: #ffffff transparent transparent transparent;
+			top: 13px;
+    		right: 20px;
+		}
+			.submenu{
+				display: none;
+				width: 152px;
+				height: 156px;
+				position: absolute;
+				left: 0;
+				top: 31px;
+				margin: 0;
+				background: #323232;
+				box-shadow: 0px 7px 18px -1px #000000;
+				
+			}
+			.submenu li{
+				float: none;
+				display: block;
+				/*background: none;*/
+				width: 152px;
+				height: 31px;
+				font-family: Tahoma;
+				text-align: left;
+				font-size: 14px;
+				color: #fff;
+				margin-left: 10px;
+			}
+			.submenu li a{
+				height: 25px;
+			}
+
+			.clearfix{
+				content: ".";
+				display: block;
+				clear: both;
+			}
+			.content{
+				position: relative;
+				/*z-index: 1;*/
+				height: 545px;
+				width: 1000px;
+			}
+			.sideleft{
+
+				background-color: #edeef0;
+				width: 210px;
+				height: 545px;
+				float: left;
+				border-left: 1px solid #c7cacf;
+				border-right: 1px solid #c7cacf;
+			}
+			
+			.center{
+				width: 58%;
+			}
+			.sideright{
+				/*position: relative;*/
+				overflow: hidden;
+				float: right;
+				width: 210px;
+				height: 545px;
+				background-color: #edeef0;
+				border-left: 1px solid #c7cacf;
+				border-right: 1px solid #c7cacf;
+			}
+			.title{
+				margin-top: 5px;
+				text-align: center;
+				font-family: Tahoma;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.text{
+				font-family: Tahoma;
+				font-size: 14px;
+				line-height: 22px;
+				margin-left: 15px;
+				margin-right: 20px;
+				margin-top: 5px;
+			}
+			
+.footer{
+	width: 580px;
+	height: 28px;
+	margin: 0 auto;
+}
+.foot{
+	font-family: Tahoma;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+	line-height: 26px;
+	font-weight: 400;
+}

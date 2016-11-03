@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7 - 8 module</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+          <h3 class="left__title">Tabs</h3>
+          <ul class="mark">
+            <li class="mark__list active">
+              <a href="#one" class="mark__in active">box I</a>
+            </li>
+            <li class="mark__list">
+              <a href="#two" class="mark__in">box II</a>
+            </li>
+            <li class="mark__list">
+              <a href="#three" class="mark__in">box III</a>
+            </li>
+          </ul>
+            <div class="left__inside active" id="one">
+              <p class="textin">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor  consequat. Duis aute irure dolor in reprehenderit ii officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="left__inside" id="two">
+              <p class="textin">
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+            </div>
+            <div class="left__inside" id="three">
+              <p class="textin">
+              n voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qut nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qut nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qut nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qu</p>
+            </div>
+
+      </div>
+      <div class="right">
+        <h3 class="right__title">Tooltips</h3>
+        <div class="right__form">
+            <label for="firstname" class="form__string">first name</label>
+              <input id="firstname" type="text"  class="form__text">
+              <span class="hide__help">Please provide your firstname</span>
+
+            <label for="lastname" class="form__string">last name</label>
+              <input id="lastname" type="text" class="form__text">
+              <span class="hide__help">Please provide also your lastname</span>
+
+            <label for="address" class="form__string">address</label>
+              <input id="address" type="text" class="form__text">
+              <span class="hide__help">Your home or work address</span>
+        </div>
+      </div>
+      <button type="button" name="button" class="but__help">Show help..</button>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+body{
+	background-color: white;
+}
+table{
+	border-collapse: collapse;
+	border: 12px solid white;
+	height: 540px;
+	width: 500px;
+	margin-left: 25%;
+}
+
+td{
+	border:10px solid black;
+}
+.col1{
+	height: 45px;
+}
+.col2, .col3{
+	height: 130px;
+}
+
+.col4, .col5 {
+	height: 60px;
+}
+
+.col6, .col7{
+	height: 30px;
+}
