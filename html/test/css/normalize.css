@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  border: none;
+  font-family: Open Sans, Tahoma;
+}
+body{
+	width: 100%;
+}
+html{
+	width: 100%;
+}
+a{
+  color: #fff;
+}
+a:hover{
+  color: #fff;
+}
+a:active{
+  color: #fff;
+}

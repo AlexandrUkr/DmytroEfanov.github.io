@@ -1,0 +1,81 @@
+.head__in{
+  padding-top: 25px;
+}
+.button{
+  text-align: center;
+  padding-top: 7px;
+}
+.change__block{
+  display: inline-block;
+  text-align: center;
+  padding-top: 65px;
+}
+
+.small__right{
+  float: right;
+}
+.change-foto{
+
+}
+.change--clearfix:after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.change--left{
+  margin-right: 23%;
+}
+.change--right{
+
+  float: right;
+}
+
+.change--center{
+  margin-right: 23%;
+}
+.change__line{
+  display: inline-block;
+  /*width: 32%;*/
+  /*text-align: center;*/
+}
+.middle__sprites{
+  display: inline-block;
+  width: 70%;
+  float: right;
+  text-align: right;
+}
+.middle__sprites>div{
+  display: inline-block;
+  width: 11%;
+}
+.middle__share{
+  padding-top: 20px;
+}
+.middle__phrase{
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+/*.img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8{
+  margin: 0 auto;
+}*/
+.foot__block{
+  display: inline-block;
+}
+.foot__list{
+  display: inline-block;
+  float: right;
+  /*text-align: right;*/
+}
+.clearfix:after{
+  content: '';
+  clear: right;
+  display: block;
+}
+.end{
+  line-height: 45px;
+}
+.end__right{
+  float: right;
+}
