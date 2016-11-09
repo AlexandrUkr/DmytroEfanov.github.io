@@ -6,7 +6,6 @@ body{
   width: 990px;
 }
 .top{
-  /*border-bottom: 4px solid #7abd30;*/
   height: 60px;
   display: flex;
   align-items: center;
@@ -36,7 +35,6 @@ body{
                 /*----------right side-----------*/
 .right__top{
   padding-bottom: 10px;
-  border-bottom: 1px solid #d7d7d7;
   font-size: 24px;
   font-weight: bold;
   color: #585858;
@@ -44,9 +42,10 @@ body{
 }
 .main__inner{
   display: flex;
+  border-top: 1px solid #d7d7d7;
 }
 .main__slim{
-  font-size: 11px;
+  font-size: 12px;
   color: rgb(158, 157, 157);
   margin: 25px 0 10px 0;
 }
@@ -58,13 +57,13 @@ body{
   margin: 50px 0 0 17px;
   width: 100%;
 }
-
 .sidebar__link{
   color: #007db7;
   font-size: 14px;
   text-decoration: underline;
 }
 .bold{
+  display: inline-block;
   font-size: 18px;
   text-decoration: none;
   color: black;
@@ -75,8 +74,9 @@ body{
 .sidebar__list{
   line-height: 1.6;
 }
-.left__side{
-  /*width: 542px;*/
+.sidebar__list>span{
+  color: #9c9c9c;
+  margin-left: 5px;
 }
 .text__photo{
   width: 100%;
@@ -86,8 +86,16 @@ body{
   font-size: 14px;
   margin-bottom: 30px;
   color: #585858;
-  word-spacing: 3px;
+  word-spacing: 2px;
   line-height: 1.4;
+}
+.text__links{
+  text-decoration: underline;
+  color: #007db7;
+}
+.text__links:hover{
+  text-decoration: none;
+  color: #007db7;
 }
 .bottom{
   width: 670px;
@@ -98,9 +106,41 @@ body{
   margin-bottom: 25px;
 }
 .bottom>p{
-  font-size: 13px;
+  font-size: 14px;
   margin: 25px 0 30px 0;
   color: #585858;
-  word-spacing: 3px;
+  word-spacing: 2px;
   line-height: 1.4;
+}
+                              /*------sprites-------*/
+.sprite1, .sprite2, .sprite3, .sprite4:hover{
+  pointer-events: painted;
+}
+.sprite1{
+  display: inline-block;
+  width: 78px;
+  height: 21px;
+  background: url(../img/sprites.png) no-repeat;
+  background-position: 0 0;
+}
+.sprite2{
+  display: inline-block;
+  width: 80px;
+  height: 21px;
+  background: url(../img/sprites.png) no-repeat;
+  background-position: 0 -21px;
+}
+.sprite3{
+  display: inline-block;
+  width: 94px;
+  height: 21px;
+  background: url(../img/sprites.png) no-repeat;
+  background-position: 0 -42px;
+}
+.sprite4{
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+  background: url(../img/sprites.png) no-repeat;
+  background-position: 0 -63px;
 }
