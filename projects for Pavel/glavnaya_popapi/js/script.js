@@ -1,4 +1,5 @@
 'use strict';
+<<<<<<< HEAD
 
 $(document).ready(function () {
 
@@ -117,3 +118,5 @@ $(document).ready(function () {
      onBeforePrevSlide: function (el) {}
  });
 });
+=======
+>>>>>>> origin/master
