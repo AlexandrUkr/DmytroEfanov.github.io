@@ -1,19 +1,16 @@
-<<<<<<< HEAD
+
 html{
   /*background-color: rgb(130, 123, 173);*/
 }
-=======
->>>>>>> origin/master
+
 body{
    justify-content: center;
    display: flex;
 }
 .container{
    width: 965px;
-<<<<<<< HEAD
    padding-bottom: 100px;
-=======
->>>>>>> origin/master
+
 }
 .top{
    display: flex;
@@ -59,19 +56,14 @@ margin-bottom: 15px;
    font-weight: bold;
 }
             /*---------sliders ----------------*/
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
+
 .slide1>div{
    height: 359px;
    display: inline-block;
    position: relative;
-<<<<<<< HEAD
    /*border: 3px solid #f1f1f1;*/
-=======
    /*border: 1px solid #f1f1f1;*/
->>>>>>> origin/master
    border: 3px solid transparent;
    /*overflow: hidden;*/
 }
@@ -81,7 +73,6 @@ margin-bottom: 15px;
     right: 30%;
     top: 305px;
 }
-<<<<<<< HEAD
 /*.item:hover{
 =======
 .slide1>div:hover{
@@ -96,10 +87,10 @@ height: 400px;
 }*/
 .bin_block{
   display: none;
-=======
+
 }
 .bin_block{
->>>>>>> origin/master
+
    position: absolute;
    left: 47px;
    top: 356px;
