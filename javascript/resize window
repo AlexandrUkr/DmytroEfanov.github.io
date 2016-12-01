@@ -1,0 +1,23 @@
+//  resize window and manipulate with class;
+$(document).ready(function changeClass() {
+   var $button = $('.getChange');
+
+   $button.on('click', function(){
+
+      var $body = $button.parent('body');
+      $body.toggleClass("one hide");
+      $button.toggleClass("getChange newChange");
+
+});
+   function windowSize(){
+    if ($(window).width() < '980'){
+        $('body').addClass("hide");
+        $('body').removeClass("one");
+    } else {
+      $('body').addClass("one");
+      $('body').removeClass("hide");
+    }
+}
+$(window).load(windowSize); // при загрузке
+$(window).resize(windowSize); // при изменении размеров
+});
