@@ -2,17 +2,28 @@ jQuery(document).ready(function WindowSize() {
 
    var changeSize = jQuery('.changeWidth');
    var oldClass = jQuery('.changeWidth').children('.container');
+   var delClass = jQuery('.info');
 
    function windowSize(){
-    if (jQuery(window).width() >= '1600'){
-        oldClass.width('1575');
-    } else {
-      oldClass.width('1170');
-   }
+    if (jQuery(window).width() >= '1580'){
+        oldClass.addClass('container-fluid');
+        oldClass.removeClass('container');
+    }
+       else if (jQuery(window).width() >= '1366'){
+          oldClass.addClass('container');
+          oldClass.removeClass('container-fluid');
+          delClass.addClass('col-lg-4');
+          delClass.removeClass('col-lg-3');
+         oldClass.width('1170');
+      }
+      else{
+         oldClass.addClass('container');
+         oldClass.removeClass('container-fluid');
+         oldClass.width('');
+      }
+   
 }
    jQuery(window).load(windowSize); // by load;
    jQuery(window).resize(windowSize); // by change size;
 
 });
-
-// change properties of .container when window size bigger than 1600px;
