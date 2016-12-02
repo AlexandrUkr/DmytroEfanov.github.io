@@ -1,0 +1,18 @@
+jQuery(document).ready(function WindowSize() {
+
+   var changeSize = jQuery('.changeWidth');
+   var oldClass = jQuery('.changeWidth').children('.container');
+
+   function windowSize(){
+    if (jQuery(window).width() >= '1600'){
+        oldClass.width('1575');
+    } else {
+      oldClass.width('1170');
+   }
+}
+   jQuery(window).load(windowSize); // by load;
+   jQuery(window).resize(windowSize); // by change size;
+
+});
+
+// change properties of .container when window size bigger than 1600px;
