@@ -1,4 +1,4 @@
-//  resize window and manipulate with class;
+//  resize window and manipulate with class;   it works!!
 jQuery(document).ready(function WindowSize() {
 
    var changeSize = jQuery('.changeWidth');
