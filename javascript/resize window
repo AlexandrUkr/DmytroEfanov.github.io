@@ -1,23 +1,37 @@
 //  resize window and manipulate with class;
-$(document).ready(function changeClass() {
-   var $button = $('.getChange');
+jQuery(document).ready(function WindowSize() {
 
-   $button.on('click', function(){
+   var changeSize = jQuery('.changeWidth');
+   var oldClass = jQuery('.changeWidth').children('.container');
+   var delClass = jQuery('.info');
 
-      var $body = $button.parent('body');
-      $body.toggleClass("one hide");
-      $button.toggleClass("getChange newChange");
-
-});
    function windowSize(){
-    if ($(window).width() < '980'){
-        $('body').addClass("hide");
-        $('body').removeClass("one");
-    } else {
-      $('body').addClass("one");
-      $('body').removeClass("hide");
+    if (jQuery(window).width() >= '1580' ){
+        oldClass.addClass('container-fluid');
+        console.log('>1580');
+        oldClass.removeClass('container');
+        if(delClass.hasClass("col-lg-4"));
+		  delClass.addClass("col-lg-3");
+        delClass.removeClass('col-lg-4');
     }
+       else if (jQuery(window).width() <= '1580'){
+         //  oldClass.removeClass('container');
+          console.log('>1366');
+         //  oldClass.addClass('container-fluid');
+          delClass.addClass('col-lg-4');
+          delClass.removeClass('col-lg-3');
+         // oldClass.width('1170');
+      }
+
+      else {
+         oldClass.addClass('container');
+         console.log('else');
+         oldClass.removeClass('container-fluid');
+         oldClass.width('');
+      }
+
 }
-$(window).load(windowSize); // при загрузке
-$(window).resize(windowSize); // при изменении размеров
+   jQuery(window).load(windowSize); // by load;
+   jQuery(window).resize(windowSize); // by change size;
+
 });
