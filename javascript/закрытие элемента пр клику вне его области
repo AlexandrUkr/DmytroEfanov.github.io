@@ -1,0 +1,18 @@
+jQuery(document).ready(function () {
+   var hideBlock = jQuery('.frame_time');
+   var showTime = jQuery('.spanch-bob');
+
+      jQuery(document).click( function(event){
+      	if( jQuery(event.target).closest(".frame_time").length )
+      	return;
+      	jQuery(".frame_time").hide();
+      	event.stopPropagation();
+      });
+      jQuery('.spanch-bob').click( function() {
+      		jQuery(this).siblings(".frame_time").slideToggle("slow");
+      		return false;
+      	})
+
+});
+
+        Если коротко, то скрипт делает следующее: по клику на документе (в любом месте страницы) плавно скрывает блок с классом frame_time - при клике на блоке с классом frame_time ничего не происходит и при клике на ссылке с классом spanch-bob - сворачивает и разворачивает блок с классом frame_time - как раз то, что нам и нужно. Пользуйся!
