@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src='slider.js'></script>
+  <script src='tmpl.js'></script>
+  <script src='script.js'></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/215e31c601.js"></script>
+</head>
+<body>
+   <div class="carousel">
+      <div class="carousel-arrow-left"><span>Влево</span></div>
+      <div class="carousel-hider">
+         <ul class="carousel-list">
+            <li class="carousel-element"><img src="img/01.jpg" alt=""><p>title 1</p>
+            </li>
+            <li class="carousel-element"><img src="img/02.jpg" alt=""><p>title 2</p>
+            </li>
+            <li class="carousel-element"><img src="img/03.jpg" alt=""><p>title 3</p>
+            </li>
+            <li class="carousel-element"><img src="img/04.jpg" alt=""><p>title 4</p>
+            </li>
+            <li class="carousel-element"><img src="img/05.jpg" alt=""><p>title 5</p>
+            </li>
+            <li class="carousel-element"><img src="img/06.jpg" alt=""><p>title 6</p>
+            </li>
+            <li class="carousel-element"><img src="img/07.jpg" alt=""><p>title 7</p>
+            </li>
+         </ul>
+      </div>
+      <div class="carousel-arrow-right"><span>Вправо</span></div>
+   </div>
+
+
+   <div class="wrap_template">
+      <script type="text/html" id="my_profile">
+         <div class="content_template">
+            <h1><%= profile_name %></h1>
+            <img src ="<%= img_src %>" class="profile_img">
+            <p><%= activity %></p>
+            <div class="<%= block_info %>">
+               <p><%= choice %></p>
+               <ul>
+                  <li><%= list1 %></li>
+                  <li><%= list2 %></li>
+                  <li><%= list3 %></li>
+               </ul>
+            </div>
+            <div class="profile_data">
+               <i class="<%= font_icon %>"></i>
+               <span><%= my_number %></span>
+               <div class="fbook">
+                  <i class="<%= fbook_icon %>"></i>
+                  <a href='<%= fbook_btn %>'>смотреть</a>
+               </div>
+            </div>
+            <div class="feedbeck">
+               <p>мой фидбек:</p>
+               <p><%= feedback %></p>
+            </div>
+         </div>
+      </script>
+   </div>   
+</body>
+</html>
