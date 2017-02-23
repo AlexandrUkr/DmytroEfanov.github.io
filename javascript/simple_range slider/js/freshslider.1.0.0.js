@@ -288,5 +288,6 @@
         updateCarets();
 
         return this;
+
     }
 }(jQuery));
