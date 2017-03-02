@@ -58,7 +58,7 @@
                <% for (i = 0; i < hits.length; i++) {%>
                   <div>
                      <h3><%= hits[i].user %></h3>
-                     <a class="link">
+                     <a class="link" href="<%= hits[i].webformatURL %>">
                          <img src="<%= hits[i].previewURL %>" alt="<%= hits[i].tags %>" title="<%= hits[i].tags %>">
                       </a>
                   </div>

@@ -1,6 +1,7 @@
 $(document).ready(function() {
    var html = $('#wrapper').html();
    var setData;
+   var modal;
 
     $('.voice').hover(function() {
         $(this).siblings('#popup').stop().fadeIn(200);
@@ -32,13 +33,16 @@ $(document).ready(function() {
         }
     });
 //////////////////
-   // $('body').on('click', '.link',  function (e) {
-   //    var href = data.hits[0].webformatURL;
-   //    e.preventDefault();
-   //    var modal = $('<div class="modal"><img src="' + href +'"></div>');
-   //    $('body').append(modal);
-   //    console.log('click is done');
-   //
-   // });
+   $('body').on('click', '.link',  function (e) {
+      var href = $(this).attr('href');
+      e.preventDefault();
+      modal = $('<div id="overlay"><div id="modal"><img src="' + href +'"></div></div>');
+      modal.one('click', hideModal);
+      $('body').append(modal);
+   });
+
+   function hideModal() {
+      modal.remove();
+   }
 
 });
