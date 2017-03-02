@@ -1,4 +1,6 @@
 $(document).ready(function() {
+   var html = $('#wrapper').html();
+   var setData;
 
     $('.voice').hover(function() {
         $(this).siblings('#popup').stop().fadeIn(200);
@@ -6,50 +8,37 @@ $(document).ready(function() {
         $(this).siblings('#popup').stop().fadeOut(200);
     });
     //////////////////////
-
-    var setData;
-    var request = new XMLHttpRequest();
-
-    function getjson() {
-
-      var setData = $('#main_search').val();
-       request.open('GET', 'https://api.tenor.co/v1/search?key=LIVDSRZULELA&tag='+ setData +'&limit=' +3);
-       request.onreadystatechange = function () {
-          if (request.status === 200 && request.readyState === 4) {
-             var resultText = JSON.parse(request.responseText);
-
-             for(var i = 0; i < 3; i++) {
-                var imgSrc = resultText.results[i].media[0].gif.url;
-                $('.image').append('<img src="'+imgSrc+'"> ');
-
-             };
-             console.log(resultText);
-
-          } else if (request.status !== 200) {
-             console.log('false');
-          }
-       }
-       request.send();
-    }
-    console.log(request);
-
-    $('.button_search').on('click ', getjson);
-    $('.textarea').on('change', getjson);
+   function getImg() {
+      $('.result').remove();
+      setData = $('#main_search').val();
+      $.ajax({
+         url: 'https://pixabay.com/api/?key=4697858-6e5dfa77924d476695f1b4913&image_type=photo&per_page=24&lang=en,ru',
+         data: {q: setData},
+         dataType: 'jsonp',
+         success: function(data){
+            console.log(data);
+            var content = tmpl(html, data);
+            $('body').append(content);
+            console.log(data.hits[0].webformatURL);
+         }
+      })
+   };
+   ////////////////////////
+    $('.button_search').on('click ', getImg);
     $('.textarea').keyup(function(e) {
        $(this).attr('autocomplete', 'off');
         if (e.keyCode == 13) {
-            getjson();
-        };
+            getImg();
+        }
     });
-
-    $('.textarea').on(' focusout', function(){
-
-       if($(this).val().length >= 1) {
-          $(this).val('');
-
-       } else {
-          return;
-       }
-   });
+//////////////////
+   // $('body').on('click', '.link',  function (e) {
+   //    var href = data.hits[0].webformatURL;
+   //    e.preventDefault();
+   //    var modal = $('<div class="modal"><img src="' + href +'"></div>');
+   //    $('body').append(modal);
+   //    console.log('click is done');
+   //
+   // });
 
 });

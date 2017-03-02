@@ -69,11 +69,22 @@ header .green {
     color: green;
 }
 
+.last_letter {
+    position: relative;
+    top: 25px;
+    display: inline-block;
+    background-image: url(img/y.png);
+    background-size: 60px 100px;
+    width: 60px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
 header p {
     font-size: 16px;
     font-weight: 300;
     color: #4285f4;
-    left: 97px;
+    left: 69px;
     position: relative;
     margin-top: -20px;
 }
@@ -100,7 +111,7 @@ header p {
 }
 
 .form_search {
-    margin-top: 30px;
+    margin: 30px 0 30px 0;
 }
 
 .voice {
@@ -197,29 +208,27 @@ header p {
 }
 
 .content {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 0 15px;
+    padding: 15px 15px;
     text-align: left;
 }
 
 .content .image img {
-    width: 200px;
-    height: 150px;
-    padding: 30px 0;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
 }
 
 .image {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    width: 97%;
+    margin: 0 auto;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.image h3 {
+    display: none;
 }
 
 .result h3>a {
