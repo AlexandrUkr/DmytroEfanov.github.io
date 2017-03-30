@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="apple-touch-icon" href="img/ic_launcher-1x.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="ic_launcher-1-5x.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="img/ic_launcher-2x.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="img/ic_launcher-3x.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Vegidair">
+    <title>Vegidair</title>
+    <style>
+	  html {
+		height: 100%;
+	  }
+	  *  {	font-family: calibri,helvetica,sans-serif;}
+      body {  background: white;
+              /*background: -webkit-linear-gradient(white, #91a98d);
+              background: -o-linear-gradient(white, #91a98d);
+              background: -moz-linear-gradient(white, #91a98d);
+              background: linear-gradient(white, #91a98d); */
+              background-size: cover;
+              text-align: center;
+              min-height: 100%;
+      }
+      button {
+			margin:5px;
+			border:0;
+			border-radius:0.3rem;
+			background-color:#869874;
+			color:#fff;
+			line-height:2.4rem;
+			font-size:1.2rem;
+			width:80px;
+		}
+      div,input{padding:5px;font-size:1em;}
+      input{width:35px;border-radius: 0.3rem; text-align: right;}
+      @keyframes blink {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+		.alert {
+			animation: blink 1s;
+			animation-iteration-count: infinite;
+		}
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+		var firstRead=true;
+
+		function leftPad(number, targetLength) {
+			var output = number + '';
+			while (output.length < targetLength) {
+				output = '0' + output;
+			}
+			return output;
+		}
+
+		function getStatus() {
+			$.ajax({url: "/status", success: function(ans){
+				//update time
+				$('#time').text( leftPad(ans['currtime']['hours'],2) +":"+ leftPad(ans['currtime']['minutes'],2) +":"+ leftPad(ans['currtime']['seconds'],2));
+				if (ans['sensors']['online']==0) {
+					$("#th").val( ans['currtime']['hours']);
+					$("#tm").val(ans['currtime']['minutes']);
+					$("#ts").val(ans['currtime']['seconds']);
+				}
+				//update water level
+				if (ans['sensors']['waterAlert'] == 1) {
+					$('#water').addClass('alert');
+					$('#water').html('<img src="waterlevel_ALERT.png" width="20"><span style="color:blue;"> Add Water</span>');
+					$('#nutrients').hide();
+				}
+				else  {
+					$('#nutrients').show();
+					$('#water').removeClass('alert');
+					$('#water').html('<img src="waterlevel_OK.png" width="20"><span style="color:blue;"> OK</span>');
+					//update nutrients meter
+					if (ans['sensors']['nutrientAlert'] == 1) {
+						$('#nutrients').addClass('alert');
+						$('#nutrients').html('<img src="nutrients_ALERT.png" width="20"><span style="color:green;"> Add Nutrients</span>');
+					}
+					else {
+						$('#nutrients').removeClass('alert');
+						$('#nutrients').html('<img src="nutrients_OK.png" width="20"><span style="color:green;"> ' + ans['sensors']['ec']+ 'ppm</span>');
+					}
+				}
+				//programming
+				if (firstRead) {
+					$(".data").fadeIn();
+					$("#utc").text(ans['config']['utc']);
+					$("#ledoff").val(ans['config']['offLed']);
+					$("#ledon").val(ans['config']['onLed']);
+					$("#wpon").val(ans['config']['onPump']);
+					$("#wphr").val(ans['config']['hoursPump']);
+					if (ans['sensors']['online']=="0") {
+						$('#timeOnline').hide();
+					}
+					else {
+						$('#timeOffline').hide();
+					}
+					firstRead=false;
+
+				}
+			}});
+
+		}
+
+		setInterval(getStatus,10000);
+    </script>
+  </head>
+  <body>
+      <div style="text-align:left;display:inline-block;width:100%;max-width:520px;min-width:240px;">
+		  <center>
+			<img src="logo.png" style="width: 80%;">
+		  </center>
+
+		  <table style="width:100%">
+			<tr style="vertical-align:middle">
+				<td  id="water" style="text-align:left;">
+				</td>
+				<td id="nutrients" class="alert "style="text-align:center;">
+					Connecting...
+				</td>
+				<td style="text-align:right;">
+					<img src="clock.png"  width="20">
+					<span id="time"></span>
+				</td>
+			</tr>
+		  </table>
+
+		  <div class="data" style="width:95%; border-radius: 15px; border: solid 1px #6f8a53;margin-bottom:5px;background: #e4e4e4;display:none">
+			  <b>Programming</b>
+			  <form action="/config" target="config" >
+				<img src="waterpump.png"  width="20">
+				<input type='hidden' name='c' value='pump'>
+				WaterPump
+				<p style="text-align: right">ON
+				<input type='number' id="wpon" name='on' value='' min='0' max='60'> minutes, every
+				<input type='number' id="wphr" name='hours' value='' min='0' max='23'> hours
+				<button type='submit'>save</button>
+				</p>
+			  </form>
+			  <form action="/config" target="config" >
+				<img src="ledpanel.png"  width="20">
+				<input type='hidden' name='c' value='led'>
+				Light
+				<p style="text-align: right">OFF from
+				<input type='number' id="ledoff" name='off' value='' min='0' max='23'>:00 to
+				<input type='number' id="ledon" name='on' value='' min='0' max='23'>:00
+				<button type='submit'>save</button>
+				</p>
+			  </form>
+		  </div>
+
+		  <div class="data" style="width:95%; border-radius: 15px; border: solid 1px #6f8a53;margin-bottom:5px;background: #e4e4e4;display:none">
+			  <b> Time adjust </b>
+
+				<p id="timeOnline" style="text-align: right">UTC (<span id="utc">0</span>)
+					<a href='/config?c=utc&v=-1' target='config'><button onclick="$('#utc').text(parseInt($('#utc').text())-1);">- 1</button></a>
+					<a href='/config?c=utc&v=1' target='config'><button onclick="$('#utc').text(parseInt($('#utc').text())+1);">+ 1</button></a>
+				</p>
+
+				<form id="timeOffline" style="text-align: right" action='/config' target='config'>
+					<input type='hidden' name='c' value='clock'>
+					<input type='number' id="th" name='h' value='' min='0' max='59'> :
+					<input type='number' id="tm" name='m' value='' min='0' max='59'> :
+					<input type='number' id="ts" name='s' value='' min='0' max='59'>
+					<button type='submit'>save</button>
+				</form>
+		  </div>
+
+		 <div class="data" style="width:95%; border-radius: 15px; border: solid 1px #6f8a53;margin-bottom:5px;background: #e4e4e4;display:none">
+			<b>Outputs Test</b>
+			<center>
+				<a href="/config?c=test&v=1" target="config"><button><img src="waterpump.png"  width="50"></button></a>
+				<a href="/config?c=test&v=2" target="config"><button><img src="ledpanel.png"  width="50"></button></a>
+			</center>
+			<center>
+				<a href="/config?c=test&v=3" target="config"><button><img src="led_red.png"  width="50"></button></a>
+				<a href="/config?c=test&v=4" target="config"><button><img src="led_green.png"  width="50"></button></a>
+				<a href="/config?c=test&v=5" target="config"><button><img src="led_blue.png"  width="50"></button></a>
+			</center>
+		  </div>
+
+		  <div><iframe src='/status' name='status' style='height: 300px;width:100%%;'></iframe></div>
+		  <div><iframe src='/config' name='config' style='border:0px;height: 0px;width:0px;' ></iframe></div>
+      </div>
+  </body>
+</html>

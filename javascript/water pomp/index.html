@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="img/ic_launcher-1x.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="ic_launcher-1-5x.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="img/ic_launcher-2x.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="img/ic_launcher-3x.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Vegidair">
+    <title>Vegidair</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div style="text-align:left;display:inline-block;width:100%;max-width:520px;min-width:240px;">
+      <!-- main block -->
+        <center>
+            <img src="img/logo.png" style="width: 80%;">
+        </center>
+
+        <div class="data" style="width:95%; background: #e4e4e4;">
+            <b>Programming</b>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">
+                          <form action="" target="">
+                            <img src="img/waterpump.png" width="20">
+                            <input type="hidden" name="c" value="pump"> <b>WaterPump</b>
+                        </div>
+                        <div class="collapsible-body">
+                            <p style="text-align: right">ON
+                                <input type="number" class="custom_inp" id="wpon" name="on" value="" min="0" max="60"> minutes, every
+                                <input type="number" class="custom_inp" id="wphr" name="hours" value="" min="0" max="23"> hours
+                                <button type="submit">save</button>
+                            </p>
+              </form>
+            </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <form action="/config" target="config">
+                        <img src="img/ledpanel.png" width="20">
+                        <input type="hidden" name="c" value="led"> <b>Light</b>
+                </div>
+                <div class="collapsible-body">
+                    <p style="text-align: right">OFF from
+                        <input type="number" class="custom_inp" id="ledoff" name="off" value="" min="0" max="23">:00 to
+                        <input type="number" class="custom_inp" id="ledon" name="on" value="" min="0" max="23">:00
+                        <button type="submit">save</button>
+                    </p>
+                    </form>
+                </div>
+        <!-- </div>  class data -->
+      </li>
+    <!-- </ul> -->
+<!-- first section -->
+
+        <!-- <div class="data" style="width:95%; background: #e4e4e4;"> -->
+            <!-- <ul class="collapsible" data-collapsible="accordion"> -->
+                <li>
+
+                  <div class="collapsible-header">
+                    <b> Time adjust </b></div>
+                  <div class="collapsible-body">
+
+            <p id="timeOnline" style="text-align: right">UTC (<span id="utc">0</span>)
+                <a href="#" target="config"><button></button></a>
+                <a href="#" target="config"><button>+ 1</button></a>
+            </p>
+
+            <form id="timeOffline" style="text-align: right" action="" target="">
+                <input type="hidden" name="c" value="clock">
+                <input type="number" class="custom_inp" id="th" name="h" value="" min="0" max="59"> :
+                <input type="number" class="custom_inp" id="tm" name="m" value="" min="0" max="59"> :
+                <input type="number" class="custom_inp" id="ts" name="s" value="" min="0" max="59">
+                <button type="submit">save</button>
+            </form>
+          </div>
+        </li>
+      <!-- </ul> -->
+        <!-- </div> -->
+
+        <!-- <div class="data" style="width:95%; background: #e4e4e4;"> -->
+
+          <!-- <ul class="collapsible" data-collapsible="accordion"> -->
+            <li>
+              <div class="collapsible-header"><b>Outputs Test</b></div>
+              <div class="collapsible-body">
+
+            <center>
+                <a href="#" target="config"><button><img src="img/waterpump.png" width="50"></button></a>
+                <a href="#" target="config"><button><img src="img/ledpanel.png" width="50"></button></a>
+            </center>
+            <center>
+                <a href="#" target="config"><button><img src="img/led_red.png" width="50"></button></a>
+                <a href="#" target="config"><button><img src="img/led_green.png" width="50"></button></a>
+                <a href="#" target="config"><button><img src="img/led_blue.png" width="50"></button></a>
+            </center>
+              </div>
+            </li>
+          </ul>
+        <!-- </div> -->
+
+<!-- main block -->
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
