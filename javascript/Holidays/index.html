@@ -6,17 +6,65 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>summer holidays</title>
+    <script src="https://use.fontawesome.com/84d2ba0d82.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/flickity.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+<div id="modal">
+    <div class="modal-content">
+        <div class="modal-tabs">
+            <a href="login-id"  class="tabs_link">Log in</a>
+            <a href="signup-id"  class="tabs_link">Sign Up</a>
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div id="login-id" class="login-form">
+            <form class="form-signin" action="" method="post" name="form">
+                <label for="login-username">Username</label>
+                <input type="text" class="form-styling" id="login-username"  name="username" placeholder=""/>
+                <label for="login-password">Password</label>
+                <input type="text" class="form-styling" id="login-password"  name="password" placeholder=""/>
+                <div class="divider"></div>
+                <div class="check_me">
+                    <input type="checkbox" id="checkbox"/>
+                    <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
+                </div>
+                    <a class="btn-signin btn">Sign in</a>
+                <div><a href="" class="forgot">Forgot your password?</a></div>
+            </form>
+
+        </div>
+        <div id="signup-id" class="login-form"><form class="form-signup" action="" method="post" name="form">
+            <label for="sign-fullname">Full name</label>
+            <input type="text" class="form-styling" id="sign-fullname"  name="fullname" placeholder=""/>
+            <label for="sign-email">Email</label>
+            <input type="text" class="form-styling" id="sign-email"  name="email" placeholder=""/>
+            <label for="sign-password">Password</label>
+            <input type="text" class="form-styling"  id="sign-password" name="password" placeholder=""/>
+            <label for="sign-confirm">Confirm password</label>
+            <input type="text" class="form-styling"  id="sign-confirm" name="confirmpassword" placeholder=""/>
+            <div class="divider"></div>
+            <a class="btn-signup btn">Sign Up</a>
+        </form>
+        </div>
+    </div>
+</div>
+
+<!--MODAL-->
 <div class="top">
-    <div class="container ">
+    <div class="container">
         <header class="flex-between">
-            <div class="hide-on-large"><a href="" class="login">Log in</a><a href="" class="signup">Sign up</a></div>
-            <span class="main_word">URLAUBSGLÜCK</span>
-            <div class="hide-on-med-and-down"><a href="" class="login">Log in</a><a href="" class="signup">Sign up</a></div>
+            <!--<div class="hide-on-large">-->
+                <!--<a href="#" class="login" >Log in</a>-->
+                <!--<a href="#" class="signup" >Sign up</a>-->
+            <!--</div>-->
+            <span class="main_word hide-on-med-and-down">URLAUBSGLÜCK</span>
+            <div class="">
+                <a href="#" class="login modal-login" data-href="login-id">Log in</a>
+                <a href="#" class="signup modal-signup" data-href="signup-id">Sign up</a>
+            </div>
         </header>
 
         <div class="top_content">
@@ -111,7 +159,8 @@
                         <div class="abs">
                             <a href="" class="btn btn_step">step 3</a>
                             <h3>Sed leo enim, condimentum</h3>
-                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit
+                                amet facilisis.</p>
                         </div>
                     </div>
                 </div>
@@ -121,7 +170,8 @@
                         <div class="abs">
                             <a href="" class="btn btn_step">step 3</a>
                             <h3>Sed leo enim, condimentum</h3>
-                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit
+                                amet facilisis.</p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +181,8 @@
                         <div class="abs">
                             <a href="" class="btn btn_step">step 3</a>
                             <h3>Sed leo enim, condimentum</h3>
-                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                            <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit
+                                amet facilisis.</p>
                         </div>
                     </div>
                 </div>
@@ -143,29 +194,33 @@
         <div class="face_container flex-between">
             <section>
                 <div class="foto rel "><img src="img/small01.jpg" alt="" class="circle">
-                    <div class="circle abs face_icon" style="background-color: #ff4e50"><img src="img/tv.svg" alt=""></div>
+                    <div class="circle abs face_icon" style="background-color: #ff4e50"><img src="img/tv.svg" alt="">
+                    </div>
                 </div>
                 <h5>Bradley Hunter</h5>
                 <p>Based in Chicago. I love playing tennis and loud music.</p>
             </section>
             <section>
                 <div class="foto rel "><img src="img/small02.jpg" alt="" class="circle">
-                    <div class="circle abs face_icon" style="background-color: #1cd7ad"><img src="img/cup_tea.svg" alt=""></div>
+                    <div class="circle abs face_icon" style="background-color: #1cd7ad"><img src="img/cup_tea.svg"
+                                                                                             alt=""></div>
                 </div>
                 <h5>Heather Walker</h5>
                 <p>I'm a happy person that loves cats and climbing on mountains.</p>
             </section>
             <section>
                 <div class="foto rel "><img src="img/small03.jpg" alt="" class="circle">
-                    <div class="circle abs face_icon" style="background-color: #ffa507"><img src="img/flask.svg" alt=""></div>
+                    <div class="circle abs face_icon" style="background-color: #ffa507"><img src="img/flask.svg" alt="">
+                    </div>
                 </div>
                 <h5>Lucas Marsha</h5>
-                <p >I get my inspiration from nature and objects around me. I have a passion to colours, typography and
+                <p>I get my inspiration from nature and objects around me. I have a passion to colours, typography and
                     skateboards.</p>
             </section>
             <section>
                 <div class="foto rel "><img src="img/small04.jpg" alt="" class="circle">
-                    <div class="circle abs face_icon" style="background-color: #4e73db"><img src="img/paper-plane.svg" alt=""></div>
+                    <div class="circle abs face_icon" style="background-color: #4e73db"><img src="img/paper-plane.svg"
+                                                                                             alt=""></div>
                 </div>
                 <h5>Bradley Hunter</h5>
                 <p>Based in Chicago. I love playing tennis and loud music.</p>
@@ -175,18 +230,30 @@
     </div>
     <div class="img_wrapper center">
         <h3>Discover holiday activity ideas</h3>
-        <div id="img_holder"></div>
+        <div id="img_holder">
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                <div class="grid-item"><p></p></div>
+                <div class="grid-item"><p></p></div>
+                <div class="grid-item"><p></p></div>
+                <div class="grid-item"><p></p></div>
+                <div class="grid-item grid-item--width2"><p></p></div>
+                <div class="grid-item grid-item--width2"><p></p></div>
+                <div class="grid-item"><p></p></div>
+            </div>
+        </div>
         <div class="search_section center">
             <h3>Discover holiday activity ideas</h3>
             <p>Hi! What are your holiday interests?</p>
-            <form  class="request_area flex-center flex-vertical flex-around">
-                <input type="text" placeholder="Enter your interests">
-                <button class="btn">Search images</button>
+            <form class="request_area flex-center flex-vertical flex-around">
+                <input type="text" placeholder="Enter your interests" id="get_text">
+                <button class="btn" id="push_btn">Search images</button>
             </form>
         </div>
     </div>
 </div>
-<div class="divider"></div>
+<div class="divider bottom-divider"></div>
 <div class="container">
     <footer class="">
         <span class="main_word">URLAUBSGLÜCK</span>
@@ -206,8 +273,28 @@
         </div>
     </footer>
 </div>
+
+
+<script type="text/template" id="list-template">
+    <div class="block_tmpl">
+        <h1><%= htmlData.title %></h1>
+        <ul>
+            <% for(var i = 0; i < htmlData.items.length; i ++){ %>
+                <li><%= htmlData.items[i] %></li>
+            <% }  %>
+        </ul>
+
+    </div>
+</script>
+
+
+<script src="js/zepto.min.js"></script>
 <script src="js/flickity.min.js"></script>
+<script src="js/masonry.pkgd.js"></script>
+<script src="js/lodash.js"></script>
+<script src="js/imagesloaded.pkgd.js"></script>
 <script src="js/script.js"></script>
+<!--<script src="js/main.js"></script>-->
 </body>
 
 </html>
