@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #0f110d;
+  list-style-type: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hid-onmed-up {
+  display: none;
+}
+
+header {
+  height: 50px;
+  display: grid;
+  grid-template-columns: 240px 4fr;
+  background-color: #57808c;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.logo, ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo {
+  background-color: #959da4;
+}
+
+.row {
+  height: calc(100vh - 50px);
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px 4fr;
+}
+
+.panel {
+  background-color: #57808c;
+}
+
+main {
+  margin: 30px;
+  background-color: #aaada3;
+}
+
+@media (max-width: 690px) {
+
+  .hid-onmed-up {
+    display: block;
+    z-index: 99;
+  }
+
+  .hid-on-med-down {
+    display: none;
+  }
+
+  header {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .hid-list {
+    position: fixed;
+    width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+    background-color: rosybrown;
+    -webkit-transform: translateY(-105%);
+            transform: translateY(-105%);
+  }
+
+  .hid-list-active{
+    transform: translateY(0);
+    transition: 1s;
+  }
+
+  .hid-list-menu{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .hid-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .row {
+    grid-template-columns: none;
+  }
+
+  .panel {
+    position: fixed;
+    height: 100vh;
+    width: 80vw;
+    -webkit-transform: translateX(-105%);
+            transform: translateX(-105%);
+  }
+
+  .active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+
+  main {
+    margin: 10px;
+  }
+}
